@@ -56,7 +56,7 @@ Agent 没有什么神秘的，核心就是一个 while 循环：调模型、执�
 
 ## 快速开始
 
-需要 Python 3.9+。
+需要 Python 3.10+。
 
 ```bash
 git clone https://github.com/aa1143/NamiAgent.git
