@@ -17,13 +17,16 @@
 
 [图文教程](https://namiai.tech/agent/) · [快速开始](#快速开始) · [在线可视化](https://namiai.tech/matrix/agent/) · [作者 𝕏](https://x.com/antiAIvo)
 
-<img src="assets/web-hello.gif" alt="NamiAgent 网页端：写 hello.py 并运行。左边是每一步的思考和工具调用，右边是这一次发给模型的完整上下文" width="100%">
-
-<sub>真实运行（deepseek-flash）：写文件、跑命令前都会弹窗确认，右边的上下文每转一圈长一截</sub>
-
-<img src="assets/web-memory.gif" alt="新会话里说一句你好，我是纳米：长期记忆在 system 里，模型的思考过程里能看到它用上了这条记忆" width="100%">
-
-<sub>长期记忆：新会话里说一句"你好，我是纳米"，思考过程里能看到它用上了 system 里的记忆</sub>
+<table>
+<tr>
+<td width="50%"><img src="assets/web-hello.gif" alt="NamiAgent 网页端：写 hello.py 并运行。左边是每一步的思考和工具调用，右边是这一次发给模型的完整上下文" width="100%"></td>
+<td width="50%"><img src="assets/web-memory.gif" alt="新会话里说一句你好，我是纳米：长期记忆在 system 里，模型的思考过程里能看到它用上了这条记忆" width="100%"></td>
+</tr>
+<tr>
+<td align="center"><sub>写 hello.py 并运行：写文件、跑命令前弹窗确认</sub></td>
+<td align="center"><sub>长期记忆：新会话里它还记得你是谁</sub></td>
+</tr>
+</table>
 
 </div>
 
