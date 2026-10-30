@@ -42,12 +42,6 @@ Agent 没有什么神秘的，核心就是一个 while 循环：调模型、执�
 
 > 先学 [NamiGPT](https://github.com/aa1143/NamiGPT) 搞懂模型本身，再学 NamiAgent 搞懂模型外面那一圈。
 
-## 学之前，先看这份可视化
-
-[Agent 是怎么工作的](https://namiai.tech/matrix/agent/)：10 章逐格播放，看上下文每转一圈怎么变长、在哪里出问题，以及各种 Agent 技巧到底在上下文里做了什么。下面是其中第 3 章：
-
-<p align="center"><img src="assets/agent-loop.gif" alt="逐格播放 Agent Loop：左边是代码跑到哪一行，右边是此刻的上下文" width="100%"></p>
-
 ## 课程目录
 
 ### 第一部分：手写核心
@@ -84,6 +78,12 @@ Agent 没有什么神秘的，核心就是一个 while 循环：调模型、执�
 | 18 | [总对照表](docs/18-comparison.md) |
 
 > 第三部分写的是截至 2026 年 10 月的情况。这些产品更新很快，细节请以各自官方文档为准。
+
+## 配套可视化
+
+[Agent 是怎么工作的](https://namiai.tech/matrix/agent/)：10 章逐格播放，看上下文每转一圈怎么变长、在哪里出问题，以及各种 Agent 技巧到底在上下文里做了什么。下面是其中第 3 章，配合第 1 课看效果最好：
+
+<p align="center"><img src="assets/agent-loop.gif" alt="逐格播放 Agent Loop：左边是代码跑到哪一行，右边是此刻的上下文" width="100%"></p>
 
 ## 快速开始
 
