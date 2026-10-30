@@ -14,7 +14,7 @@ import subagent    # noqa: F401  导入即注册 delegate（第 9 课）
 import planning    # 第 10 课
 import memory      # 第 11 课
 
-MODEL = os.environ.get("MODEL", "deepseek-chat")
+MODEL = os.environ.get("MODEL", "deepseek-flash")
 CURRENT = contextvars.ContextVar("current_run", default=None)   # 第 9 课：子 Agent 要知道"谁派的我"
 MAX_STEPS = 20
 SOFT_LIMIT = 16000

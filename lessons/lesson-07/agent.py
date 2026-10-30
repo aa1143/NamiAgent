@@ -9,7 +9,7 @@ from tools import get_schemas, execute
 import skills      # noqa: F401  导入即注册 load_skill（第 5 课）
 import scheduler   # noqa: F401  导入即注册 schedule_task 等（第 7 课）
 
-MODEL = os.environ.get("MODEL", "deepseek-chat")
+MODEL = os.environ.get("MODEL", "deepseek-flash")
 MAX_STEPS = 20
 SOFT_LIMIT = 16000
 HARD_LIMIT = 24000

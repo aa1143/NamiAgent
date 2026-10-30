@@ -12,7 +12,7 @@ import scheduler   # noqa: F401  导入即注册 schedule_task 等（第 7 课�
 import mcp_client  # 第 8 课
 import subagent    # noqa: F401  导入即注册 delegate（第 9 课）
 
-MODEL = os.environ.get("MODEL", "deepseek-chat")
+MODEL = os.environ.get("MODEL", "deepseek-flash")
 CURRENT = contextvars.ContextVar("current_run", default=None)   # 第 9 课：子 Agent 要知道"谁派的我"
 MAX_STEPS = 20
 SOFT_LIMIT = 16000

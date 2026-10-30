@@ -14,7 +14,7 @@ client = OpenAI(
     api_key=os.environ["API_KEY"],
     base_url=os.environ.get("BASE_URL", "https://api.deepseek.com"),
 )
-MODEL = os.environ.get("MODEL", "deepseek-chat")
+MODEL = os.environ.get("MODEL", "deepseek-flash")
 MAX_STEPS = 20
 SOFT_LIMIT = 16000
 HARD_LIMIT = 24000
