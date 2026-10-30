@@ -104,7 +104,9 @@ cd lessons/lesson-11 && pytest -q
 
 ## 网页端：在浏览器里看 Agent 的每一步
 
-<img src="assets/web-demo.gif" alt="NamiAgent 网页端：左边是每一步的思考和工具调用，右边是这一次发给模型的完整上下文" width="100%">
+<img src="assets/web-hello.gif" alt="NamiAgent 网页端：写 hello.py 并运行。左边是每一步的思考和工具调用，右边是这一次发给模型的完整上下文" width="100%">
+
+<sub>真实运行（deepseek-flash）：写文件、跑命令前都会弹窗确认，右边的上下文每转一圈长一截</sub>
 
 ```bash
 python web/app.py --demo    # 演示模式：脚本化的假模型，不需要 API Key，先看看效果
@@ -121,6 +123,10 @@ macOS 也可以直接双击 `web/start.command`：自动建虚拟环境、装依
 - 开头写 `/plan ` 让它先出计划，批准后再动手（第 10 课）
 
 网页端直接导入 `lessons/lesson-11` 的 Agent，**没有改课程代码**，只换了三个接口：模型客户端（把每次发出去的上下文推给浏览器）、`handle_call`（把工具调用推给浏览器）、权限确认的 `ask`（终端 `input()` 换成弹窗）。只用 Python 标准库，不需要装 Web 框架。
+
+<img src="assets/web-memory.gif" alt="新会话里说一句你好，我是纳米：长期记忆在 system 里，模型的思考过程里能看到它用上了这条记忆" width="100%">
+
+<sub>第 11 课的长期记忆：新会话开始时，记忆整份放进 system。模型的思考过程里能看到它用上了这条记忆</sub>
 
 DeepSeek 默认开启思考模式，模型返回的思考过程（`reasoning_content`）会单独显示。带工具调用时，这段思考要原样放回上下文再发给 API，右边的上下文面板里也能看到它。界面里展示的思考只是模型写出来的文字，不等于模型内部真实的计算过程。
 
