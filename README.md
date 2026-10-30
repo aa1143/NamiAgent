@@ -111,6 +111,8 @@ python web/app.py --demo    # 演示模式：脚本化的假模型，不需要 A
 python web/app.py           # 用真实模型，和命令行版一样读 API_KEY / BASE_URL / MODEL
 ```
 
+macOS 也可以直接双击 `web/start.command`：自动建虚拟环境、装依赖、让你粘贴 API Key（直接回车就是演示模式），然后打开浏览器。Agent 的工作区默认是 `~/agent-workspace`。
+
 然后打开 http://localhost:8765 ：
 
 - **左边**：每一次调用模型、模型的思考过程、调用了什么工具、工具返回了什么
