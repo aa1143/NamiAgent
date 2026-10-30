@@ -5,7 +5,7 @@
 # NamiAgent
 
 **零基础入门 AI Agent 的基础教程**<br>
-从零手写 Agent，一行行看懂 Claude Code、Codex 这类产品的内核
+不只是教程，也是一个能在本地跑起来的 Agent，自带网页端，每一步都看得见
 
 [![test](https://github.com/aa1143/NamiAgent/actions/workflows/test.yml/badge.svg)](https://github.com/aa1143/NamiAgent/actions/workflows/test.yml)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -32,7 +32,9 @@
 
 Agent 没有什么神秘的，核心就是一个 while 循环：调模型、执行工具、把结果写回上下文，再调模型。
 
-这个仓库从 100 行的最小循环开始，一课加一个能力：工具、权限、上下文管理、Skills、MCP、子 Agent、计划、记忆。最后拆解 Claude Code、Codex 等主流 Agent 是怎么做的。内容是我自己一步步学习、动手实践后整理出来的。
+**它是教程**：从 100 行的最小循环开始，一课加一个能力：工具、权限、上下文管理、Skills、MCP、子 Agent、计划、记忆。最后拆解 Claude Code、Codex 等主流 Agent 是怎么做的。内容是我自己一步步学习、动手实践后整理出来的。
+
+**它也是一个能用的本地 Agent**：在你指定的工作区里读写文件、执行命令、接入 MCP、记住你是谁；写文件、跑命令前都会先问你。`python web/app.py` 打开网页端，左边看它每一步怎么想、调了什么工具，右边看每次发给模型的完整上下文。
 
 - **每课一个可运行的快照**：`lessons/lesson-01` 到 `lesson-11`，每个目录都是学完这一课时的完整代码，可以直接运行，也可以对比相邻两课的差异
 - **不绑定厂商**：使用 OpenAI 兼容接口，默认用 DeepSeek，换模型只需要改两个环境变量
