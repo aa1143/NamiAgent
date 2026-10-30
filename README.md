@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/logo.png" alt="NamiAgent logo" width="120">
+
 # NamiAgent
 
 **零基础入门 AI Agent 的基础教程**<br>
