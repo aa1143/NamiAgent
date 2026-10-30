@@ -31,6 +31,7 @@ Agent 没有什么神秘的，核心就是一个 while 循环：调模型、执�
 - **不绑定厂商**：使用 OpenAI 兼容接口，默认用 DeepSeek，换模型只需要改两个环境变量
 - **测试不花钱**：第 3 课起每课都有测试，第 11 课共 49 个，用假模型跑，不需要 API Key
 - **只依赖 `openai` 一个包**：没有任何 Agent 框架
+- **本地网页端**：在浏览器里看每一步，上下文怎么变长、模型怎么想、调了什么工具，一目了然（[见下文](#网页端在浏览器里看-agent-的每一步)）
 
 > 先学 [NamiGPT](https://github.com/aa1143/NamiGPT) 搞懂模型本身，再学 NamiAgent 搞懂模型外面那一圈。
 
@@ -101,13 +102,33 @@ python agent.py
 cd lessons/lesson-11 && pytest -q
 ```
 
+## 网页端：在浏览器里看 Agent 的每一步
+
+<img src="assets/web-demo.gif" alt="NamiAgent 网页端：左边是每一步的思考和工具调用，右边是这一次发给模型的完整上下文" width="100%">
+
+```bash
+python web/app.py --demo    # 演示模式：脚本化的假模型，不需要 API Key，先看看效果
+python web/app.py           # 用真实模型，和命令行版一样读 API_KEY / BASE_URL / MODEL
+```
+
+然后打开 http://localhost:8765 ：
+
+- **左边**：每一次调用模型、模型的思考过程、调用了什么工具、工具返回了什么
+- **右边**：这一次发给模型的完整上下文。每一块是谁写的、大概占多少 token，转一圈就长一截
+- **权限确认**：写文件、跑命令这类有副作用的操作会弹窗，要你点头才执行（第 3 课的规则）
+- 开头写 `/plan ` 让它先出计划，批准后再动手（第 10 课）
+
+网页端直接导入 `lessons/lesson-11` 的 Agent，**没有改课程代码**，只换了三个接口：模型客户端（把每次发出去的上下文推给浏览器）、`handle_call`（把工具调用推给浏览器）、权限确认的 `ask`（终端 `input()` 换成弹窗）。只用 Python 标准库，不需要装 Web 框架。
+
+DeepSeek 默认开启思考模式，模型返回的思考过程（`reasoning_content`）会单独显示。带工具调用时，这段思考要原样放回上下文再发给 API，右边的上下文面板里也能看到它。界面里展示的思考只是模型写出来的文字，不等于模型内部真实的计算过程。
+
 ## 环境变量
 
 | 变量 | 作用 | 默认值 |
 |---|---|---|
 | `API_KEY` | 模型密钥 | 必填 |
 | `BASE_URL` | OpenAI 兼容接口地址 | `https://api.deepseek.com` |
-| `MODEL` | 模型名 | `deepseek-chat` |
+| `MODEL` | 模型名 | `deepseek-flash` |
 | `NAMI_WORKSPACE` | Agent 的工作区（第 3 课起） | 启动时所在的目录 |
 | `NAMI_STATE_DIR` | 会话记录、定时任务等状态（第 4 课起），放在工作区之外 | `~/.nami-agent` |
 
@@ -122,10 +143,6 @@ cd lessons/lesson-11 && pytest -q
 ## 这个仓库不是什么
 
 NamiAgent 是一个**看得懂的最小 Agent**，不是生产级框架，也不打算和 Claude Code、Codex 比功能。目标是让你读完之后，再看任何 Agent 产品，都知道它在上下文里做了什么。
-
-## 接下来
-
-- 本地网页端：实时显示上下文怎么一圈圈变长，展示模型的思考过程和每一步工具调用
 
 ## 相关
 
