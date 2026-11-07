@@ -70,6 +70,8 @@ def handle_call(call, perms, allowed=None):
         args = json.loads(call.function.arguments or "{}")
     except json.JSONDecodeError:
         return "Error: 参数不是合法的 JSON"
+    if not isinstance(args, dict):
+        return "Error: 工具参数必须是 JSON 对象"
     decision = perms.check(name, args)
     if not decision.allowed:
         return f"[权限拒绝] {decision.reason}"
